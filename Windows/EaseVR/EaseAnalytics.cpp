@@ -11,9 +11,7 @@ using namespace std;
 
 namespace EaseAnalytics {
 
-	Events::Events() :
-		_javaScriptStartTime( JavaScriptTime() )
-	{
+	Events::Events() {
 	}
 
 	Events::~Events() {
@@ -117,8 +115,13 @@ namespace EaseAnalytics {
 		string type,
 		const initializer_list<string>& values
 	) {
+		auto time = JavaScriptTime();
+		if( _events.size() == 0 ) {
+			_headerTime = time;
+		}
+
 		stringstream event;
-		event << type << "\t" << TimeStamp();
+		event << type << "\t" << time - _headerTime;
 		for( auto value : values ) {
 			event << "\t" << value;
 		}
@@ -130,7 +133,7 @@ namespace EaseAnalytics {
 
 		stringstream payload;
 		payload << "H"
-			<< "\t" << TimeStamp()
+			<< "\t" << _headerTime
 			<< "\t" << "0"
 			<< "\t" << _apiKey
 			<< "\t" << _sessionID;
@@ -144,10 +147,6 @@ namespace EaseAnalytics {
 		url << _apiUrl << "/client/" << _experienceID << "/events";
 
 		HttpPost( url.str(), payload.str(), false );
-	}
-
-	long Events::TimeStamp() {
-		return JavaScriptTime() - _javaScriptStartTime;
 	}
 
 	string Events::DeTab( string str ) {

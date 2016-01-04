@@ -89,15 +89,12 @@ namespace EaseAnalytics {
 		std::vector< std::string > _events;
 		int _autoPushInterval;
 
-		long _javaScriptStartTime;
+		long _headerTime;
 
 		void AddEvent(
 			std::string type,
 			const std::initializer_list<std::string>& values = {}
 		);
-
-
-		long TimeStamp();
 
 		std::string DeTab( std::string str );
 		std::string Events::FpsStr( float fps );
