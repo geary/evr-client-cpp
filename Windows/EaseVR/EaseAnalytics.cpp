@@ -65,9 +65,7 @@ namespace EaseAnalytics {
 	) {
 		AddEvent( "MA", {
 			DeTab( name ),
-			PosStr( posX ),
-			PosStr( posY ),
-			PosStr( posZ )
+			PosStr( posX ), PosStr( posY ), PosStr( posZ )
 		});
 	}
 
@@ -77,9 +75,7 @@ namespace EaseAnalytics {
 	) {
 		AddEvent( "MR", {
 			DeTab( name ),
-			PosStr( posX ),
-			PosStr( posY ),
-			PosStr( posZ )
+			PosStr( posX ), PosStr( posY ), PosStr( posZ )
 		});
 	}
 
@@ -89,9 +85,7 @@ namespace EaseAnalytics {
 	) {
 		AddEvent( "ME", {
 			DeTab( name ),
-			PosStr( posX ),
-			PosStr( posY ),
-			PosStr( posZ )
+			PosStr( posX ), PosStr( posY ), PosStr( posZ )
 		});
 	}
 
@@ -101,9 +95,7 @@ namespace EaseAnalytics {
 	) {
 		AddEvent( "MX", {
 			DeTab( name ),
-			PosStr( posX ),
-			PosStr( posY ),
-			PosStr( posZ )
+			PosStr( posX ), PosStr( posY ), PosStr( posZ )
 		});
 	}
 
@@ -114,12 +106,8 @@ namespace EaseAnalytics {
 		long long memoryUsed
 	) {
 		AddEvent( "P", {
-			PosStr( posX ),
-			PosStr( posY ),
-			PosStr( posZ ),
-			PosStr( rotX ),
-			PosStr( rotY ),
-			PosStr( rotZ ),
+			PosStr( posX ), PosStr( posY ), PosStr( posZ ),
+			PosStr( rotX ), PosStr( rotY ), PosStr( rotZ ),
 			FpsStr( framesPerSecond ),
 			to_string( memoryUsed )
 		});
