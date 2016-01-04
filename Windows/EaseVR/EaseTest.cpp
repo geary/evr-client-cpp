@@ -72,7 +72,8 @@ int main() {
 		99.123f, 23456789
 	);
 
-	wait( 3210 );
+	_easeEvents->PostEvents();
+	wait( 1234 );
 
 	_easeEvents->MarkerExit(
 		testMarker,

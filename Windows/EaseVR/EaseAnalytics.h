@@ -55,6 +55,8 @@ namespace EaseAnalytics {
 			long long memoryUsed
 		);
 
+		void PostEvents();
+
 	protected:
 
 		Events();
@@ -94,7 +96,6 @@ namespace EaseAnalytics {
 			const std::initializer_list<std::string>& values = {}
 		);
 
-		void PostEvents();
 
 		long TimeStamp();
 
