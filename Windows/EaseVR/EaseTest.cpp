@@ -61,6 +61,8 @@ int main() {
 		99.0f, 12345678
 	);
 
+	wait( 250 );
+
 	_easeEvents->MarkerEnter(
 		testMarker,
 		1.0f, 2.0f, 3.0f
